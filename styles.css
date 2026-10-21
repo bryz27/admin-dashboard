@@ -228,3 +228,116 @@ body {
     border-radius: 25px;
     cursor: pointer;
 }
+
+.content {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "projects announcements"
+        "projects trending";
+    gap: 24px;
+    padding: 24px;
+}
+
+#projects {
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 0.2fr 4fr 4fr 4fr;
+    grid-template-areas:
+        "content-heading content-heading"
+        "project-item project-item"
+        "project-item project-item"
+        "project-item project-item";
+    gap: 10px;
+}
+
+#projects .content-heading {
+    grid-area: content-heading;
+}
+
+.content-heading p {
+    font-family: 'Inter Bold';
+    font-size: 20px;
+}
+
+.project-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 8px;
+    column-gap: 8px;
+}
+
+.project-item .project-title {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    font-family: 'Inter Bold';
+    font-size: 16px;
+    color: #111827;
+}
+
+.project-item .project-info {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-family: 'Inter Regular';
+    font-size: 12px;
+    line-height: 1.4;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.project-item .btn-add-fav {
+    grid-row: 3;
+    grid-column: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.project-item .btn-add-fav img {
+    width: 20px;
+    height: 20px;
+}
+
+.project-item .btn-hide-proj {
+    grid-row: 3;
+    grid-column: 3;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.project-item .btn-hide-proj img {
+    width: 20px;
+    height: 20px;
+}
+
+.project-item .btn-share {
+    grid-row: 3;
+    grid-column: 4;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.project-item .btn-share img {
+    width: 20px;
+    height: 20px;
+}
+
+#announcements {
+    grid-area: announcements;
+}
+
+#trending {
+    grid-area: trending;
+}
