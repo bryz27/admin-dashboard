@@ -34,14 +34,15 @@ body {
 .dashboard {
     display: grid;
     grid-template-columns: 260px 1fr;
-    grid-template-rows: 100vh;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* --Sidebar section-- */
 .sidebar {
     background-color: #1992d4;
     color: #ffffff;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 16px 0;
@@ -112,7 +113,12 @@ body {
     padding-top: 24px;
 }
 
-/* --Header section-- */
+/* --Main content & Header section-- */
+.main-content {
+    height: 100vh;
+    overflow-y: auto;
+}
+
 .header {
     background-color: #ffffff;
     display: grid;
@@ -121,8 +127,9 @@ body {
     padding: 16px 36px;
     row-gap: 16px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-    position: relative;
-    z-index: 2;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 #search-bar {
@@ -263,7 +270,7 @@ body {
     font-family: 'Inter Bold';
     font-size: 17px;
     color: #1f2937;
-    margin-bottom: 12px;
+    margin: 0;
 }
 
 /* --Project section-- */
@@ -271,7 +278,8 @@ body {
     grid-area: projects;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    row-gap: 20px;
+    column-gap: 24px;
     align-content: start;
 }
 
@@ -347,6 +355,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+#announcements .content-heading,
+#trending .content-heading {
+    margin-bottom: 8px;
 }
 
 .notif {
