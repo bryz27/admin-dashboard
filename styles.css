@@ -240,6 +240,7 @@ body {
     padding: 24px;
 }
 
+/* --Project section-- */
 #projects {
     grid-area: projects;
     display: grid;
@@ -334,10 +335,49 @@ body {
     height: 20px;
 }
 
+/* --Announcements section-- */
 #announcements {
     grid-area: announcements;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr auto auto auto;
+    grid-template-areas:
+        "content-heading"
+        "notif"
+        "notif"
+        "notif";
 }
 
+#announcements .content-heading {
+    grid-area: content-heading;
+}
+
+.notif {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    row-gap: 8px;
+    column-gap: 8px;
+}
+
+.notif .announce-title {
+    font-family: 'Inter Bold';
+    font-size: 16px;
+    color: #111827;
+}
+
+.notif .notif-info {
+    font-family: 'Inter Regular';
+    font-size: 12px;
+    line-height: 1.4;
+    color: #6b7280;
+}
+
+/* --Trending section-- */
 #trending {
     grid-area: trending;
 }
