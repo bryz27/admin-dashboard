@@ -1,19 +1,19 @@
 @font-face {
-    font-family: 'Inter Regular';
-    src: url('fonts/Inter-Regular.woff2') format('woff2');
+    font-family: "Inter Regular";
+    src: url("fonts/Inter-Regular.woff2") format("woff2");
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Inter Bold';
-    src: url('fonts/Inter-Bold.woff2') format('woff2');
+    font-family: "Inter Bold";
+    src: url("fonts/Inter-Bold.woff2") format("woff2");
     font-style: normal;
     font-weight: bold;
 }
 
 @font-face {
-    font-family: 'Inter Italic';
-    src: url('fonts/Inter-Italic.woff2') format('woff2');
+    font-family: "Inter Italic";
+    src: url("fonts/Inter-Italic.woff2") format("woff2");
     font-style: italic;
 }
 
@@ -27,7 +27,7 @@
 
 body {
     min-height: 100vh;
-    font-family: 'Inter Regular', sans-serif;
+    font-family: "Inter Regular", sans-serif;
     background-color: #e2e8f0;
 }
 
@@ -69,7 +69,7 @@ body {
 }
 
 .main-logo .main-logo-title {
-    font-family: 'Inter Bold';
+    font-family: "Inter Bold";
     font-size: 22px;
     letter-spacing: -0.5px;
 }
@@ -96,7 +96,7 @@ body {
 }
 
 .sidelinks .nav-title {
-    font-family: 'Inter Bold';
+    font-family: "Inter Bold";
     font-size: 15px;
 }
 
@@ -144,7 +144,7 @@ body {
     width: 100%;
     height: 36px;
     font-size: 14px;
-    font-family: 'Inter Regular';
+    font-family: "Inter Regular";
     background-color: #e2e8f0;
     border: none;
     border-top-left-radius: 18px;
@@ -180,7 +180,7 @@ body {
 }
 
 #profile-link .profile-name {
-    font-family: 'Inter Bold';
+    font-family: "Inter Bold";
     font-size: 15px;
     color: #111827;
 }
@@ -217,7 +217,7 @@ body {
 }
 
 #intro #greet {
-    font-family: 'Inter Bold';
+    font-family: "Inter Bold";
     font-size: 13px;
     color: #4b5563;
     grid-row: 1;
@@ -226,7 +226,7 @@ body {
 }
 
 #intro .profile-name {
-    font-family: 'Inter Bold';
+    font-family: "Inter Bold";
     font-size: 20px;
     color: #111827;
     grid-row: 2;
@@ -249,7 +249,7 @@ body {
     color: #ffffff;
     border: none;
     padding: 8px 24px;
-    font-family: 'Inter Bold';
+    font-family: "Inter Bold";
     font-size: 14px;
     border-radius: 20px;
     cursor: pointer;
@@ -267,7 +267,7 @@ body {
 }
 
 .content-heading p {
-    font-family: 'Inter Bold';
+    font-family: "Inter Bold";
     font-size: 17px;
     color: #1f2937;
     margin: 0;
@@ -303,7 +303,7 @@ body {
 .project-item .project-title {
     grid-column: 1 / -1;
     grid-row: 1;
-    font-family: 'Inter Bold';
+    font-family: "Inter Bold";
     font-size: 15px;
     color: #111827;
 }
@@ -311,7 +311,7 @@ body {
 .project-item .project-info {
     grid-column: 1 / -1;
     grid-row: 2;
-    font-family: 'Inter Regular';
+    font-family: "Inter Regular";
     font-size: 13px;
     line-height: 1.45;
     color: #6b7280;
@@ -362,26 +362,36 @@ body {
     margin-bottom: 8px;
 }
 
-.notif {
+.notif-container {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
-    padding: 16px 20px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    padding: 8px 24px;
 }
 
-.notif .announce-title {
-    font-family: 'Inter Bold';
-    font-size: 14px;
+.notif-container .notif {
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.notif-container .notif:not(:last-child) {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.notif-container .notif .announce-title {
+    font-family: "Inter Bold";
+    font-size: 13px;
     color: #111827;
 }
 
-.notif .notif-info {
-    font-family: 'Inter Regular';
+.notif-container .notif .notif-info {
+    font-family: "Inter Regular";
     font-size: 12px;
-    line-height: 1.4;
+    line-height: 1.45;
     color: #6b7280;
 }
 
@@ -393,31 +403,40 @@ body {
     gap: 12px;
 }
 
-#trending .trend-item {
+#trending .trend-container {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
-    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 24px;
+}
+
+#trending .trend-container .trend-item {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
     row-gap: 2px;
     column-gap: 14px;
     align-items: center;
+    padding: 12px 0;
 }
 
+#trending .trend-container .trend-item:not(:last-child) {
+    border-bottom: 1px solid #e5e7eb;
+}
 
-#trending .trend-item .project-pic {
-    width: 44px;
-    height: 44px;
+#trending .trend-container .trend-item .project-pic {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
     grid-row: 1 / 3;
     grid-column: 1;
 }
 
-#trending .trend-item .creator-name {
-    font-family: 'Inter Bold';
+#trending .trend-container .trend-item .creator-name {
+    font-family: "Inter Bold";
     font-size: 13px;
     color: #111827;
     grid-row: 1;
@@ -425,8 +444,8 @@ body {
     align-self: end;
 }
 
-#trending .trend-item .creator-project-title {
-    font-family: 'Inter Regular';
+#trending .trend-container .trend-item .creator-project-title {
+    font-family: "Inter Regular";
     font-size: 12px;
     line-height: 1.3;
     color: #6b7280;
